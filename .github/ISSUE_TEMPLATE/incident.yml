@@ -1,0 +1,58 @@
+name: Incident
+description: Add a public, source-backed AI anomaly
+title: "incident: "
+labels: ["incident"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: One-line title
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: Claude Mythos 5, GPT-5.6, unknown
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date (YYYY-MM-DD)
+    validations:
+      required: true
+  - type: input
+    id: place
+    attributes:
+      label: Place
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - agent escape
+        - unauthorized access
+        - hallucination
+        - scheming
+        - production wipe
+        - jailbreak
+        - loss of control
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Only what a primary source supports.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+    validations:
+      required: true

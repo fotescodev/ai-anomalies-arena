@@ -1,0 +1,34 @@
+name: Evidence pack
+description: Submit a locker manifest (hashes only in public)
+title: "evidence: "
+labels: ["evidence", "whistleblower"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste the locker manifest. Do not paste secrets, customer data, or raw production dumps.
+        Read WHISTLEBLOWER.md first.
+  - type: textarea
+    id: manifest
+    attributes:
+      label: aaa-evidence-v1 JSON
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What the files show (no secrets)
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Checks
+      options:
+        - label: I redacted credentials and personal data
+          required: true
+        - label: No content involving minors
+          required: true
+        - label: I am not posting exploit or weapons instructions
+          required: true
