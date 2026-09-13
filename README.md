@@ -4,9 +4,11 @@ Open arena for **documented** AI anomalies. Not a vibe check. Not a scoreboard f
 
 The product question is narrow: *did this system do something the public record can show?* Votes are not proof. Screenshots without a hash are not proof. A lab note, a court filing, a logged trial, or a hashed original file can be.
 
+Live repo: https://github.com/fotescodev/ai-anomalies-arena
+
 ## Use it
 
-Open `index.html` in a browser. No build step.
+Open `index.html` in a browser. No build step. Catalog loads from `data/incidents.js` on `file://` and from `data/incidents.json` over HTTP.
 
 - **Feed** — incidents, Reddit-style scoring, filters by model and type
 - **Map** — where the disclosure or impact sat
@@ -31,31 +33,9 @@ The arena does not answer “is AI an issue.” It publishes the record so anyon
 3. Every `documented` row needs at least one working source URL.
 4. Open a pull request. Template is in `.github/PULL_REQUEST_TEMPLATE.md`.
 
-Do not invent model names, quotes, or coordinates. If the model is unknown, say so.
-
 ## Whistleblow without standing up a server
 
-The locker runs in the browser.
-
-- Files never leave the device unless *you* download the pack or attach it somewhere
-- Each file is hashed with SHA-256 so you can prove later that a given file existed
-- The pack is a JSON manifest (`aaa-evidence-v1`) plus your originals
-- You can open a GitHub issue from the generated body, or keep the pack offline
-
-Read `WHISTLEBLOWER.md` before you drop production logs.
-
-## Repo layout
-
-```
-index.html                 arena app
-data/incidents.json        public catalog
-schema/incident.schema.json
-WHISTLEBLOWER.md           how evidence is handled
-CONTRIBUTING.md
-GOVERNANCE.md
-SECURITY.md
-LICENSE                    Apache-2.0
-```
+The locker runs in the browser. Files never leave the device unless you download the pack or attach a hash manifest to an Evidence issue. Read `WHISTLEBLOWER.md`.
 
 ## License
 
